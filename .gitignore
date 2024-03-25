@@ -1,0 +1,4 @@
+.env
+.env-deploy
+node_modules/
+sqitch.conf

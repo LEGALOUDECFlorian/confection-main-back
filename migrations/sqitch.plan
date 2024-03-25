@@ -1,0 +1,6 @@
+%syntax-version=1.0.0
+%project=confection-main
+
+create-table 2024-02-06T15:18:37Z Etudiant O'clock <student@teleporter> # creation de la structure
+crud_function 2024-02-09T09:41:42Z Stéphanie Ong <stephanie.ong.fr@gmail.com> # ajout fonctions crud
+create-view 2024-02-20T00:20:34Z ,,, <flowx@Flow-glowin> # view

@@ -1,0 +1,38 @@
+{
+  "name": "projet-05-confection-main-back",
+  "version": "1.0.0",
+  "description": "## Présentation",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx nodemon",
+    "start": "node .",
+
+    "db:seeding": "psql -h dpg-cn5nc26n7f5s738j985g-a.frankfurt-postgres.render.com -U handmade -d handmade_bupn -f data/seeding.sql --password",
+    "db:reset": "sqitch revert -y; sqitch deploy; npm run db:seeding",
+    "db:seeding:local": "psql -d handmade -f data/seedingV2.sql",
+    "db:reset:local": "sqitch revert -y; sqitch deploy; npm run db:seeding:local"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.1"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cloudinary": "^2.0.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "express-jsdoc-swagger": "^1.8.0",
+    "joi": "^17.12.1",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.0.3",
+    "pg": "^8.11.3"
+  }
+}

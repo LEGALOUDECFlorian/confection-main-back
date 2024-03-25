@@ -1,0 +1,48 @@
+@endpoint=http://localhost:{{$dotenv PORT}}/api
+### Creation d'1 user avec bcrypt pour le mot de passe
+POST {{endpoint}}/users
+Content-Type: application/json
+
+{
+  "lastname": "charle",
+  "firstname": "couturier",
+  "email": "khv.couturier@lolilol.com",
+  "password": "Password1234!"
+}
+
+###
+POST {{endpoint}}/login
+Content-Type: application/json
+
+{
+  "email":"khv.couturier@lolilol.com",
+  "password":"Password1234!"
+}
+
+###
+GET {{endpoint}}/login/user/2
+Authorization: Bearer Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJrYXNzaW0ubG9saWxvbEBsb2xpbG9sLmNvbSIsImlhdCI6MTcwNzc1NDMwMywiZXhwIjoxNzA3NzU0MzIzfQ.nTFwqb4T-XT5LYQo7FSt0mLtgjohf3xybYuEFLOUg1w
+
+###
+GET {{endpoint}}/login/user/2
+Authorization: Bearer Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJrYXNzaW0ubG9saWxvbEBsb2xpbG9sLmNvbSIsImlhdCI6MTcwNzc1NDMwMywiZXhwIjoxNzA3NzU0MzIzfQ.nTFwqb4T-XT5LYQo7FSt0mLtgjohf3xybYuEFLOUg1w
+
+
+
+###
+GET {{endpoint}}/users/2
+Authorization: Bearer Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJrYXNzaW0ubG9saWxvbEBsb2xpbG9sLmNvbSIsImlhdCI6MTcwNzc1NDMwMywiZXhwIjoxNzA3NzU0MzIzfQ.nTFwqb4T-XT5LYQo7FSt0mLtgjohf3xybYuEFLOUg1w
+
+###
+GET {{endpoint}}/login/user/2
+Authorization: Bearer Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJrYXNzaW0ubG9saWxvbEBsb2xpbG9sLmNvbSIsImlhdCI6MTcwNzc1NDMwMywiZXhwIjoxNzA3NzU0MzIzfQ.nTFwqb4T-XT5LYQo7FSt0mLtgjohf3xybYuEFLOUg1w
+
+###
+GET {{endpoint}}/login/user/2
+Authorization: Bearer Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJrYXNzaW0ubG9saWxvbEBsb2xpbG9sLmNvbSIsImlhdCI6MTcwNzc1NDMwMywiZXhwIjoxNzA3NzU0MzIzfQ.nTFwqb4T-XT5LYQo7FSt0mLtgjohf3xybYuEFLOUg1w
+
+### 
+GET {{endpoint}}/login/refresh_token
+
+###
+DELETE {{endpoint}}/login/refresh_token

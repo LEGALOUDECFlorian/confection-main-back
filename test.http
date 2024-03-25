@@ -1,0 +1,645 @@
+@endpoint=http://localhost:{{$dotenv PORT}}/api
+#@endpoint=https://confection-main.onrender.com/api
+
+### Resource Not Found
+GET {{endpoint}}/je-n-existe-pas
+
+### Récupération de tous les users
+GET {{endpoint}}/users
+
+### Récupération d'1 user
+GET {{endpoint}}/users/29
+
+### Récupération d'1 user avec paramètre invalide
+GET {{endpoint}}/users/truc
+Content-Type: application/json
+
+### Récupération d'1 user avec paramètre inexistant
+GET {{endpoint}}/users/9999
+Content-Type: application/json
+
+### Creation d'1 user
+POST {{endpoint}}/users
+Content-Type: application/json
+
+{
+  "lastname": "paul",
+  "firstname": "delagrillade",
+  "email": "paul.lolilol@lolilol.com",
+  "password": "P@ssw0rd123!",
+  "address": "45 rue de la pile",
+  "zipcode": "45126",
+  "city": "lolilo",
+  "phone_number": "0123456789",
+  "role_id": 1,
+  "workshop_id": 1
+}
+
+### Création d'1 user avec un champ obligatoire manquant
+POST {{endpoint}}/users
+Content-Type: application/json
+
+{
+  "lastname": "paul",
+  "email": "kassim.lolilol@lolilol.com",
+  "password": "1234",
+  "address": "45 rue de la pile",
+  "zipcode": "45126",
+  "city": "lolilo",
+  "phone_number": "0123456789",
+  "role_id": 1,
+  "workshop_id": 1
+}
+
+### Création d'1 user avec un champ invalide
+POST {{endpoint}}/users
+Content-Type: application/json
+
+{
+  "lastname": "paul",
+  "firstname": "mirabelle",
+  "email": "06",
+  "password": "1234",
+  "address": "45 rue de la pile",
+  "zipcode": "45126",
+  "city": "lolilo",
+  "phone_number": "0123456789",
+  "role_id": 1,
+  "workshop_id": 1
+}
+
+### Modification d'1 user
+PATCH {{endpoint}}/users/27
+Content-Type: application/json
+
+{
+    "firstname": "JOHNYYY",
+    "city": "tours",
+     "workshop_id": 2
+}
+
+###"workshop_id": 28,
+  ###"role_id": 2,
+### Modification d'un user inexistant
+PATCH {{endpoint}}/users/9999
+Content-Type: application/json
+
+{
+  "phone_number": "0123456789"
+}
+
+### Modification d'1 user avec champ invalide
+PATCH {{endpoint}}/users/2
+Content-Type: application/json
+
+{
+  "phone_number": "batman"
+}
+
+### Suppression d'1 user
+DELETE {{endpoint}}/users/2
+
+### Suppression d'1 user inexistant
+DELETE {{endpoint}}/users/9999
+
+### Récupération de tous les role par leur id
+GET {{endpoint}}/roles/1
+
+//### Récupération d'1 role par son id
+//GET {{endpoint}}/roles/1
+
+### Récupération d'1 role par son id avec paramètre invalide
+GET {{endpoint}}/roles/truc
+Content-Type: application/json
+
+
+### Récupération d'1 role par son id avec paramètre inexistant
+GET {{endpoint}}/roles/9999
+Content-Type: application/json
+
+### Creation d'1 role par son id
+POST {{endpoint}}/roles
+Content-Type: application/json
+
+{
+  "lastname": "tom",
+  "firstname": "delaraclette",
+  "email": "tom.lolilol@lolilol.com",
+  "password": "P@ssword1787",
+  "address": "46 rue de la batterie",
+  "zipcode": "45126",
+  "city": "lolilo",
+  "phone_number": "0987654321",
+  "role_id": 1,
+  "workshop_id": 1
+}
+
+### Création d'1 role par son id avec un champ obligatoire manquant
+POST {{endpoint}}/roles
+Content-Type: application/json
+
+{
+  "lastname": "tom",
+  "email": "tom.lolilol@lolilol.com",
+  "password": "P@ssword1784",
+  "address": "46 rue de la batterie",
+  "zipcode": "45126",
+  "city": "lolilo",
+  "phone_number": "0987654321",
+  "role_id": 1,
+  "workshop_id": 1
+}
+
+### Création d'1 role par son id avec un champ invalide
+POST {{endpoint}}/roles
+Content-Type: application/json
+
+{
+  "lastname": "tom",
+  "firstname": "507317",
+  "email": "tom.lolilol@lolilol.com",
+  "password": "P@ssword1782",
+  "address": "46 rue de la batterie",
+  "zipcode": "45126",
+  "city": "lolilo",
+  "phone_number": "0987654321",
+  "role_id": 1,
+  "workshop_id": 1
+}
+
+### Modification d'1 role par son id
+PATCH {{endpoint}}/roles/1
+Content-Type: application/json
+
+{
+    "firstname": "JOHNYYY"
+}
+
+### Modification d'un role par son id inexistant
+PATCH {{endpoint}}/roles/9999
+Content-Type: application/json
+
+{
+  "firstname": "JOHNYYY"
+}
+
+### Modification d'1 role par son id avec champ invalide
+PATCH {{endpoint}}/roles/1
+Content-Type: application/json
+
+{
+  "phone_number": "batman"
+}
+
+### Suppression d'1 role par son id
+DELETE {{endpoint}}/roles/1
+
+### Suppression d'1 role par son id inexistant
+DELETE {{endpoint}}/roles/9999
+
+### Récupération de tous les articles
+GET {{endpoint}}/articles
+
+### Récupération d'1 article
+GET {{endpoint}}/articles/1
+
+### Récupération d'1 article avec paramètre invalide
+GET {{endpoint}}/articles/truc
+
+### Récupération d'1 article avec paramètre inexistant
+GET {{endpoint}}/articles/9999
+
+### Création d'un article
+POST {{endpoint}}/articles
+Content-Type: application/json
+
+{
+  "name": "article 1",
+  "description": "Description for article 1",
+  "picture": "path/to/picture1.jpg",
+  "price": 19.99,
+  "material": "Material 1",
+  "customizable": true,
+  "workshop_id": 1,
+  "category_id": 1,
+  "subcategory_id": 1,
+  "status_id": 1
+}
+
+{
+  "name":"test",
+  "description":"test",
+  "picture":"https://res.cloudinary.com/dey9vc5kc/image/upload/v1709058058/j7rdjcmkojor3inuj6wi.jpg",
+  "price":29,
+  "material":"coton",
+  "customizable":false,
+  "workshop_id":25,
+  "category_id":1,
+  "subcategory_id":1,
+  "status_id":1
+}
+
+### Création d'un article avec un champ obligatoire manquant
+POST {{endpoint}}/articles
+Content-Type: application/json
+
+{
+  "description": "Description for article 1",
+  "picture": "path/to/picture1.jpg",
+  "price": 19.99,
+  "material": "Material 1",
+  "customizable": true,
+  "workshop_id": 1,
+  "category_id": 1,
+  "subcategory_id": 1,
+  "status_id": 1
+}
+
+### Création d'un article avec un champ invalide
+POST {{endpoint}}/articles
+Content-Type: application/json
+
+{
+  "name": "article 1",
+  "description": "Description for article 1",
+  "picture": "5",
+  "price": 19.99,
+  "material": "Material 1",
+  "customizable": null,
+  "workshop_id": 1,
+  "category_id": 1,
+  "subcategory_id": 1,
+  "status_id": 1
+}
+
+### Modification d'un article
+PATCH {{endpoint}}/articles/2
+Content-Type: application/json
+
+{
+  "price": 29.99
+}
+
+### Modification d'un article inexistant
+PATCH {{endpoint}}/articles/999
+Content-Type: application/json
+
+{
+  "price": 29.99
+}
+
+### Modification d'un article avec champ invalide
+PATCH {{endpoint}}/articles/2
+Content-Type: application/json
+
+{
+  "price": "cat"
+}
+
+### Suppression d'un article
+DELETE {{endpoint}}/articles/2
+
+### Suppression d'un article inexistant
+DELETE {{endpoint}}/articles/9999
+
+### Récupération de tous les workshops
+GET {{endpoint}}/createurs
+
+### Récupération d'1 workshop
+GET {{endpoint}}/createurs/2
+
+### Récupération d'1 workshop avec paramètre invalide
+GET {{endpoint}}/createurs/truc
+
+### Récupération d'1 workshop avec paramètre inexistant
+GET {{endpoint}}/createurs/9999
+
+### Création d'un workshop
+POST {{endpoint}}/createurs
+Content-Type: application/json
+
+{
+  "name": "Couture Elegance",
+  "email": "info@coutureelegance.com",
+  "description": "Atelier de couture élégant",
+  "registration_number": "45678901739567",
+  "address": "1010 Rue des Broderies",
+  "address": "1010 Rue des Broderies",
+  "zipcode": "59000",
+  "city": "Marseille",
+  "phone_number": "+33678901234",
+  "picture": "https://pixabay.com/fr/photos/ciseaux-cuir-atelier-travail-5788751/"
+}
+
+### Création d'un workshop avec un champ obligatoire manquant
+POST {{endpoint}}/createurs
+Content-Type: application/json
+
+{
+  "name": "Couture Elegance",
+  "email": "info@coutureelegance.com",
+  "description": "Atelier de couture élégant",
+  "address": "1010 Rue des Broderies",
+  "address": "1010 Rue des Broderies",
+  "zipcode": "59000",
+  "city": "Marseille",
+  "phone_number": "+33678901234",
+  "picture": "https://pixabay.com/fr/photos/ciseaux-cuir-atelier-travail-5788751/"
+}
+
+### Création d'un workshop avec un champ invalide
+POST {{endpoint}}/createurs
+Content-Type: application/json
+
+{
+  "name": "Couture Elegance",
+  "email": "info@coutureelegance.com",
+  "description": "Atelier de couture élégant",
+  "registration_number": "45678901739567",
+  "address": "1010 Rue des Broderies",
+  "address": "1010 Rue des Broderies",
+  "zipcode": "5900O",
+  "city": "Marseille",
+  "phone_number": "+33678901234",
+  "picture": "https://pixabay.com/fr/photos/ciseaux-cuir-atelier-travail-5788751/"
+}
+
+### Modification d'un workshop
+PATCH {{endpoint}}/createurs/5
+Content-Type: application/json
+
+{
+  "zipcode": "60000"
+}
+
+### Modification d'un workshop inexistant
+PATCH {{endpoint}}/createurs/10
+Content-Type: application/json
+
+{
+  "zipcode": "60000"
+}
+
+### Modification d'un workshop avec champ invalide
+PATCH {{endpoint}}/createurs/7
+Content-Type: application/json
+
+{
+  "zipcode": "E3000"
+}
+
+### Suppression d'un workshop
+DELETE {{endpoint}}/createurs/2
+
+### Suppression d'un workshop inexistant
+DELETE {{endpoint}}/createurs/9999
+
+### Récupération de tous les statuts
+GET {{endpoint}}/statuts
+
+### Récupération d'1 status
+GET {{endpoint}}/statuts/2
+
+### Récupération d'1 statut avec paramètre invalide
+GET {{endpoint}}/statuts/truc
+
+### Récupération d'1 statut avec paramètre inexistant
+GET {{endpoint}}/statuts/9999
+
+### Création d'un statut
+POST {{endpoint}}/statuts
+Content-Type: application/json
+
+{
+  "name": "promotion"
+}
+
+### Création d'un statut avec un champ obligatoire manquant
+POST {{endpoint}}/statuts
+Content-Type: application/json
+
+{
+  
+}
+
+### Création d'un statut avec un champ invalide
+POST {{endpoint}}/statuts
+Content-Type: application/json
+
+{
+  "name": "promotion888"
+}
+
+### Modification d'un statut
+PATCH {{endpoint}}/statuts/5
+Content-Type: application/json
+
+{
+  "name": "promo"
+}
+
+### Modification d'un statut inexistant
+PATCH {{endpoint}}/statuts/10
+Content-Type: application/json
+
+{
+  "name": "promo"
+}
+
+### Modification d'un statut avec champ invalide
+PATCH {{endpoint}}/statuts/5
+Content-Type: application/json
+
+{
+  "name": "!!!_!"
+}
+
+### Suppression d'un statut
+DELETE {{endpoint}}/createurs/5
+
+### Suppression d'un statut inexistant
+DELETE {{endpoint}}/createurs/9999
+
+### Récupération de toutes les catégories
+GET {{endpoint}}/categories
+
+### Récupération d'1 catégorie
+GET {{endpoint}}/categories/2
+
+### Récupération d'1 catégorie avec paramètre invalide
+GET {{endpoint}}/categories/truc
+
+### Récupération d'1 catégorie avec paramètre inexistant
+GET {{endpoint}}/categories/9999
+
+### Création d'une catégorie
+POST {{endpoint}}/categories
+Content-Type: application/json
+
+{
+  "name": "jardinage"
+}
+
+### Création d'une catégorie avec paramètre obligatoire manquant
+POST {{endpoint}}/categories
+Content-Type: application/json
+
+{
+  
+}
+
+### Création d'une catégorie avec champ invalide
+POST {{endpoint}}/categories
+Content-Type: application/json
+
+{
+  "name": "!!!"
+}
+
+### Modification d'une catégorie
+PATCH {{endpoint}}/categories/10
+Content-Type: application/json
+
+{
+  "name": "jardin"
+}
+
+### Modification d'une catégorie avec champ invalide
+PATCH {{endpoint}}/categories/10
+Content-Type: application/json
+
+{
+  "name": "______"
+}
+
+### Modification d'une catégorie inexistante
+PATCH {{endpoint}}/categories/9999
+Content-Type: application/json
+
+{
+  "name": "jardin"
+}
+
+### Suppression d'1 catégorie
+DELETE {{endpoint}}/categories/10
+
+### Suppression d'1 catégorie inexistante
+DELETE {{endpoint}}/categories/9999
+
+### Récupération de toutes les sous-catégories
+GET {{endpoint}}/sous-categories
+
+### Récupération d'1 sous-catégorie
+GET {{endpoint}}/sous-categories/2
+
+### Récupération d'1 sous-catégorie avec paramètre invalide
+GET {{endpoint}}/sous-categories/truc
+
+### Récupération d'1 sous-catégorie avec paramètre inexistant
+GET {{endpoint}}/sous-categories/9999
+
+### Création d'une sous-catégorie
+POST {{endpoint}}/sous-categories
+Content-Type: application/json
+
+{
+  "name": "chouchou"
+}
+
+### Création d'une sous-catégorie avec paramètre obligatoire manquant
+POST {{endpoint}}/sous-categories
+Content-Type: application/json
+
+{
+  
+}
+
+### Création d'une sous-catégorie avec champ invalide
+POST {{endpoint}}/sous-categories
+Content-Type: application/json
+
+{
+  "name": "!!!"
+}
+
+### Modification d'une sous-catégorie
+PATCH {{endpoint}}/sous-categories/64
+Content-Type: application/json
+
+{
+  "name": "ruban chouchou"
+}
+
+### Modification d'une sous-catégorie avec champ invalide
+PATCH {{endpoint}}/sous-categories/64
+Content-Type: application/json
+
+{
+  "name": "______"
+}
+
+### Modification d'une sous-catégorie inexistante
+PATCH {{endpoint}}/sous-categories/9999
+Content-Type: application/json
+
+{
+  "name": "jardin"
+}
+
+### Suppression d'1 sous-catégorie
+DELETE {{endpoint}}/sous-categories/67
+
+### Suppression d'1 sous-catégorie inexistante
+DELETE {{endpoint}}/sous-categories/9999
+
+### Associer 1 sous-catégorie à 1 catégorie
+PUT {{endpoint}}/sous-categories/64/categories/2
+
+### Dissocier 1 sous-catégorie d'1 catégorie
+DELETE {{endpoint}}/sous-categories/64/categories/2
+
+### Récupérer tous les produits correspondant à une sous-catégorie d'une catégorie
+GET {{endpoint}}/categories/femme/sous-categories/pull/articles
+
+### Récupérer tous les produits correspondant à une sous-catégorie d'une catégorie inexistante
+GET {{endpoint}}/categories/hommes/sous-categories/tshirt/articles
+
+### Récupérer tous les produits correspondant à une sous-catégorie inexistante d'une catégorie
+GET {{endpoint}}/categories/homme/sous-categories/skirt/articles
+
+### Récupérer tous les produits correspondant à une sous-catégorie invalide d'une catégorie
+GET {{endpoint}}/categories/femme/sous-categories/999/articles
+
+### Récupérer toutes les sous-catégories d'une catégorie **
+GET {{endpoint}}/categories/femme/sous-categories
+
+### Récupérer toutes les sous-catégories d'une catégorie inexsitante
+GET {{endpoint}}/categories/hommeux/sous-categories
+
+### Récupérer toutes les sous-catégories d'une catégorie invalide
+GET {{endpoint}}/categories/999/sous-categories
+
+### Récupérer toutes les catégories avec leurs sous-catégories
+GET {{endpoint}}/categories/sous-categories
+
+###  Récupérer 6 articles proposés de façon aléatoire
+GET {{endpoint}}/articles/aleatoires
+
+###   Récupérer 6 articles d'une catégorie proposés de façon aléatoire
+GET {{endpoint}}/articles/femme/aleatoires
+
+### Récupérer les 6 derniers créateurs inscrits
+GET {{endpoint}}/createurs/derniers-inscrits
+
+### Récupérer tous les utilisateurs en fonction de leur role
+GET {{endpoint}}/users/roles/createur
+
+### Récupérer les informations d'un utilisateur et de son atelier en fonction de son ID
+GET {{endpoint}}/users/2/createur
+
+### Récupérer les informations d'un article incluant les informations de l'article,
+### du créateur, de la catégorie, de la sous-catégorie et son statut
+GET {{endpoint}}/articles/details/2
+
+### Récupérer tous les articles d'un créateur par l'ID de son atelier
+GET {{endpoint}}/articles/createurs/20
