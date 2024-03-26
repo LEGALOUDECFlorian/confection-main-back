@@ -9,7 +9,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://confection-main.netlify.app/",
+    origin: "*",
   }),
 );
 
