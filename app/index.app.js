@@ -8,12 +8,12 @@ import createDoc from "./helpers/swagger.doc.js";
 const app = express();
 
 app.use(cors({
-  origin: "*",
-  // origin: "https://confection-main.netlify.app/",
-  // methods: ["GET", "POST", "PATCH", "PUT", "DELETE"],
-  // allowedHeaders: ["Content-Type", "Authorization", "application/json"],
+  origin: "https://confection-main.netlify.app/",
+  methods: ["GET", "POST", "PATCH", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization", "application/json"],
+  credentials: true,
 }));
-
+// origin: "*",
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
