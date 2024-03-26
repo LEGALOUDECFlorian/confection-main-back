@@ -8,7 +8,7 @@
     "dev": "npx nodemon",
     "start": "node .",
 
-    "db:seeding": "psql -h dpg-cn5nc26n7f5s738j985g-a.frankfurt-postgres.render.com -U handmade -d handmade_bupn -f data/seeding.sql --password",
+    "db:seeding": "psql -h dpg-cn5nc26n7f5s738j985g-a.frankfurt-postgres.render.com -U handmade -d handmade_bupn -f data/seedingV2.sql --password",
     "db:reset": "sqitch revert -y; sqitch deploy; npm run db:seeding",
     "db:seeding:local": "psql -d handmade -f data/seedingV2.sql",
     "db:reset:local": "sqitch revert -y; sqitch deploy; npm run db:seeding:local"
