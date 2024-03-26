@@ -8,9 +8,10 @@ import createDoc from "./helpers/swagger.doc.js";
 const app = express();
 
 app.use(cors({
-  origin: "https://confection-main.netlify.app/",
-  methods: ["GET", "POST", "PATCH", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization", "application/json"],
+  origin: "*",
+  // origin: "https://confection-main.netlify.app/",
+  // methods: ["GET", "POST", "PATCH", "PUT", "DELETE"],
+  // allowedHeaders: ["Content-Type", "Authorization", "application/json"],
 }));
 
 app.use(express.json());
