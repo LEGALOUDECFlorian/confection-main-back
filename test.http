@@ -8,7 +8,7 @@ GET {{endpoint}}/je-n-existe-pas
 GET {{endpoint}}/users
 
 ### Récupération d'1 user
-GET {{endpoint}}/users/29
+GET {{endpoint}}/users/9
 
 ### Récupération d'1 user avec paramètre invalide
 GET {{endpoint}}/users/truc
@@ -214,30 +214,31 @@ POST {{endpoint}}/articles
 Content-Type: application/json
 
 {
-  "name": "article 1",
-  "description": "Description for article 1",
-  "picture": "path/to/picture1.jpg",
-  "price": 19.99,
-  "material": "Material 1",
-  "customizable": true,
-  "workshop_id": 1,
-  "category_id": 1,
-  "subcategory_id": 1,
-  "status_id": 1
-}
-
-{
   "name":"test",
   "description":"test",
   "picture":"https://res.cloudinary.com/dey9vc5kc/image/upload/v1709058058/j7rdjcmkojor3inuj6wi.jpg",
   "price":29,
   "material":"coton",
   "customizable":false,
-  "workshop_id":25,
+  "workshop_id":20,
   "category_id":1,
   "subcategory_id":1,
   "status_id":1
 }
+
+# {
+#   "name": "article 1",
+#   "description": "Description for article 1",
+#   "picture": "path/to/picture1.jpg",
+#   "price": 19.99,
+#   "material": "Material 1",
+#   "customizable": true,
+#   "workshop_id": 1,
+#   "category_id": 1,
+#   "subcategory_id": 1,
+#   "status_id": 1
+# }
+
 
 ### Création d'un article avec un champ obligatoire manquant
 POST {{endpoint}}/articles
