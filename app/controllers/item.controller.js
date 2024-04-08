@@ -23,11 +23,12 @@ export default class ItemController extends CoreController {
     return res.status(200).json(randomItems);
   }
 
-  static async getItemInformation(req, res, next) {
-    // Récupération des informations d'un article par son ID
+  static async getAllItemInformation(req, res, next) {
+    // Récupération des informations d'un article  incluant les informations de
+    // l'article,du créateur, de la catégorie, de la sous-catégorie et son
+    // statut par son ID
     const { itemId } = req.params;
-    console.log("controller", itemId);
-    const itemInformation = await ItemDatamapper.findItemInformation(itemId);
+    const itemInformation = await ItemDatamapper.findAllItemInformation(itemId);
     if (!itemInformation) {
       return next();
     }

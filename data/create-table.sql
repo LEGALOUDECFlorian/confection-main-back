@@ -71,7 +71,7 @@ CREATE TABLE "user" (
   "city" TEXT NOT NULL,
   "phone_number" phone_number_fr NOT NULL,
   "role_id" INT NOT NULL REFERENCES"role"("id") DEFAULT 3,
-  "workshop_id" INT REFERENCES"workshop"("id") DEFAULT 0,
+  "workshop_id" INT REFERENCES"workshop"("id") DEFAULT null,
   "created_at" TIMESTAMPTZ NOT NULL DEFAULT now(),
   "updated_at" TIMESTAMPTZ
 );

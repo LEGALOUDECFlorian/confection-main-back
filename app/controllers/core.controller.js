@@ -1,4 +1,4 @@
-export default class Controller {
+export default class CoreController {
   static datamapper;
 
   static async getAll(_, res) {

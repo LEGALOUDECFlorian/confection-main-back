@@ -8,8 +8,7 @@ export default class ItemDatamapper extends CoreDatamapper {
 
   // Méthode pour récupérer les informations d'un article incluant les informations de l'article,
   // du créateur, de la catégorie, de la sous-catégorie et son statut
-  static async findItemInformation(itemId) {
-    console.log("datamapper", itemId);
+  static async findAllItemInformation(itemId) {
     const result = await client.query(`
       SELECT *
       FROM "item_information"

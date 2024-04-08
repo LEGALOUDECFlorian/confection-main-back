@@ -295,7 +295,7 @@ itemRouter.route("/details/:itemId(\\d+)")
    *  "error": "Internal Server Error"
    * }
    */
-  .get(controllerWrapper(ItemController.getItemInformation.bind(ItemController)));
+  .get(controllerWrapper(ItemController.getAllItemInformation.bind(ItemController)));
 
 itemRouter.route("/createurs/:workshopId(\\d+)")
 /**

@@ -7,8 +7,8 @@ GET {{endpoint}}/je-n-existe-pas
 ### Récupération de tous les users
 GET {{endpoint}}/users
 
-### Récupération d'1 user
-GET {{endpoint}}/users/9
+### Récupération d'1 user par son ID
+GET {{endpoint}}/users/25
 
 ### Récupération d'1 user avec paramètre invalide
 GET {{endpoint}}/users/truc
@@ -214,16 +214,16 @@ POST {{endpoint}}/articles
 Content-Type: application/json
 
 {
-  "name":"test",
-  "description":"test",
+  "name":"Pull femme",
+  "description":"Magnifique pull en laine tricoté à la main",
   "picture":"https://res.cloudinary.com/dey9vc5kc/image/upload/v1709058058/j7rdjcmkojor3inuj6wi.jpg",
-  "price":29,
+  "price":299.99,
   "material":"coton",
   "customizable":false,
   "workshop_id":20,
   "category_id":1,
   "subcategory_id":1,
-  "status_id":1
+  "status_id":3
 }
 
 # {
@@ -307,7 +307,7 @@ DELETE {{endpoint}}/articles/9999
 GET {{endpoint}}/createurs
 
 ### Récupération d'1 workshop
-GET {{endpoint}}/createurs/2
+GET {{endpoint}}/createurs/21
 
 ### Récupération d'1 workshop avec paramètre invalide
 GET {{endpoint}}/createurs/truc
@@ -458,7 +458,7 @@ Content-Type: application/json
 ### Suppression d'un statut
 DELETE {{endpoint}}/createurs/5
 
-### Suppression d'un statut inexistant
+### Suppression d'un créateur inexistant
 DELETE {{endpoint}}/createurs/9999
 
 ### Récupération de toutes les catégories
@@ -636,7 +636,7 @@ GET {{endpoint}}/createurs/derniers-inscrits
 GET {{endpoint}}/users/roles/createur
 
 ### Récupérer les informations d'un utilisateur et de son atelier en fonction de son ID
-GET {{endpoint}}/users/2/createur
+GET {{endpoint}}/users/25/createur
 
 ### Récupérer les informations d'un article incluant les informations de l'article,
 ### du créateur, de la catégorie, de la sous-catégorie et son statut
