@@ -226,18 +226,18 @@ Content-Type: application/json
   "status_id": 1
 }
 
-{
-  "name":"test",
-  "description":"test",
-  "picture":"https://res.cloudinary.com/dey9vc5kc/image/upload/v1709058058/j7rdjcmkojor3inuj6wi.jpg",
-  "price":29,
-  "material":"coton",
-  "customizable":false,
-  "workshop_id":25,
-  "category_id":1,
-  "subcategory_id":1,
-  "status_id":1
-}
+# {
+#   "name":"test",
+#   "description":"test",
+#   "picture":"https://res.cloudinary.com/dey9vc5kc/image/upload/v1709058058/j7rdjcmkojor3inuj6wi.jpg",
+#   "price":29,
+#   "material":"coton",
+#   "customizable":false,
+#   "workshop_id":25,
+#   "category_id":1,
+#   "subcategory_id":1,
+#   "status_id":1
+# }
 
 ### Création d'un article avec un champ obligatoire manquant
 POST {{endpoint}}/articles

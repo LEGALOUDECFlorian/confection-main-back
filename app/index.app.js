@@ -1,5 +1,5 @@
 import express from "express";
-import helmet from "helmet";
+// import helmet from "helmet";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import router from "./routers/index.router.js";
@@ -9,13 +9,14 @@ import createDoc from "./helpers/swagger.doc.js";
 const app = express();
 
 app.use(cors({
-  origin: "https://confection-main.netlify.app",
-  methods: ["GET", "POST", "PATCH", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization", "application/json"],
-  credentials: true,
+  origin: "*",
+  // origin: "https://confection-main.netlify.app",
+  // methods: ["GET", "POST", "PATCH", "PUT", "DELETE"],
+  // allowedHeaders: ["Content-Type", "Authorization", "application/json"],
+  // credentials: true,
 }));
 
-app.use(helmet());
+// app.use(helmet());
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
