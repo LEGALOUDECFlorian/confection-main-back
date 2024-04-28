@@ -7,6 +7,7 @@ import apiWorkshopRouter from "./workshop.router.js";
 import apiUserRouter from "./user.router.js";
 import apiAuthRouter from "./auth.router.js";
 import apiItemRouter from "./item.router.js";
+import cloudinaryRouter from "./cloudinary.router.js";
 
 const apiRouter = express.Router();
 
@@ -17,6 +18,8 @@ apiRouter.use("/categories", apiCategoryRouter);
 apiRouter.use("/sous-categories", apiSubcategoryRouter);
 apiRouter.use("/articles", apiItemRouter);
 apiRouter.use("/statuts", apiStatusRouter);
+
+apiRouter.use("/cloudinary", cloudinaryRouter);
 
 apiRouter.use("/login", apiAuthRouter);
 apiRouter.use((_, __, next) => {

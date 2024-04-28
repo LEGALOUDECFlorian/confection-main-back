@@ -10,7 +10,7 @@ const app = express();
 
 app.use(cors({
   origin: "*",
-  // origin: "https://confection-main.netlify.app",
+  // origin: ["https://confection-main.netlify.app", "https://dev--confection-main.netlify.app"],
   // methods: ["GET", "POST", "PATCH", "PUT", "DELETE"],
   // allowedHeaders: ["Content-Type", "Authorization", "application/json"],
   // credentials: true,
